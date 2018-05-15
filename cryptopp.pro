@@ -13,25 +13,7 @@ gcc:QMAKE_CXXFLAGS += -msha -march=native
 
 CONFIG += c++14
 
-
 CONFIG += staticlib
-CONFIG -= debug_and_release debug_and_release_target
-
-DEFINES -= UNICODE
-
-CONFIG(release, debug|release) {
-  BuildConfig = "release"
-}
-CONFIG(debug, debug|release) {
-  BuildConfig = "debug"
-}
-
-DESTDIR = $${PWD}/bin/$${BuildConfig}
-OBJECTS_DIR = $${PWD}/intermediate/$${BuildConfig}
-MOC_DIR = $${PWD}/intermediate/$${BuildConfig}
-RCC_DIR = $${PWD}/intermediate/$${BuildConfig}
-UI_DIR  = $${PWD}/intermediate/$${BuildConfig}
-SUBDIRS = $${PWD}/intermediate/$${BuildConfig}
 
 SOURCES += \
     3way.cpp \
